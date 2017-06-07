@@ -10,6 +10,9 @@ class GamesController < ApplicationController
 
     @game.check_guess(guess)
 
-    render action: :play
+    respond_to do |format|
+      format.html { render action: :play }
+      format.json { render json: @game }
+    end
   end
 end
