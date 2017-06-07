@@ -1,0 +1,22 @@
+<div>
+  <header class="header">
+    <h1>SortingGame</h1>
+    <div class="score">
+      <%= @game.score %>
+    </div>
+  </header>
+
+  <div class="game">
+    <div class="controller">
+      <%= form_for(@game) do |f| %>
+        <%= f.submit "red", class: "red" %>
+
+        <%= f.submit "green", class: "green" %>
+      <% end %>
+    </div>
+
+    <div class="queue">
+      <div class="cube <%= @game.current_color %>">?</div>
+    </div>
+  </div>
+</div>
